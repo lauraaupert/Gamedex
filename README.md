@@ -1,3 +1,10 @@
+# USER STORY
+
+*AS AN* Avid gamer
+*I WANT* a user friendly application that condenses all games across multiple platform stores
+*SO I* will not have to search multiple applications for the game I am seeking to purchase
+*BECAUSE* I am tired of having to run and search through multiple applications on my computer to find a game I would like to play.
+
 # Create React Express App
 
 ## About This Boilerplate
