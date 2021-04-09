@@ -1,10 +1,16 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React from "react";
+
 import "./App.css";
-import Wishlist from "./components/WishList";
+import Wishlist from "./components/Wishlist/WishList";
+import Navbar from "./components/Wishlist/Navbar";
 
 function App() {
-  return <Wishlist />;
+  return (
+    <div>
+      <Navbar />
+      <Wishlist />
+    </div>
+  );
 }
 
 export default App;
