@@ -2,12 +2,16 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { Box } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
-    maxWidth: 345,
+    minWidth: 800,
+    // height: 2000,
+  },
+  root2: {
+    minWidth: 700,
+    height: 700,
   },
   media: {
     height: 0,
@@ -15,20 +19,28 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function Wishlist() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="WistList"
-        subheader="Choose your game"
-      />
-    </Card>
+    <div>
+      <Box display="flex" justifyContent="center">
+        <Card className={classes.root}>
+          <Box>
+            <CardHeader title="WistList" subheader="Choose Your Game" />
+          </Box>
+        </Card>
+      </Box>
+
+      <Box display="flex" justifyContent="center" m={1} p={1}>
+        <Box p={1} bgcolor="grey.300"></Box>
+
+        <Card className={classes.root2}>
+          <Box>
+            <CardHeader title="list" subheader="" />
+          </Box>
+        </Card>
+      </Box>
+    </div>
   );
 }
