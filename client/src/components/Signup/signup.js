@@ -9,14 +9,14 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 const Signup=() => {
-const paperStyle={padding:"30px 20px",width:300, margin:"20px auto"}
+const paperStyle={padding:20 ,width:300, margin:"0 auto"}
 const headerStyle={margin:0}
 const avatarStyle={backgroundColor:"#00801c"}
 const btnStyle={backgroundColor:"#00801c", color:"white"}
 const marginTop={marginTop:10}
   return (
     <Grid>
-      <Paper elevation={20} style={paperStyle}>
+      <Paper style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
             <PersonAddOutlinedIcon />
