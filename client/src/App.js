@@ -3,10 +3,14 @@ import React from "react";
 import "./App.css";
 import Wishlist from "./components/Wishlist/WishList";
 import Navbar from "./components/Wishlist/Navbar";
+import Login from "./components/Wishlist/login";
 
 function App() {
   return (
     <div>
+      <div className="App">
+      <Login />
+      </div>
       <Navbar />
       <Wishlist />
     </div>
