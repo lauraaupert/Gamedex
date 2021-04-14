@@ -32,12 +32,10 @@ export default function Wishlist() {
         </Card>
       </Box>
 
-      <Box display="flex" justifyContent="center" m={1} p={1}>
-        <Box p={1} bgcolor="grey.300"></Box>
-
+      <Box display="flex" justifyContent="center">
         <Card className={classes.root2}>
           <Box>
-            <CardHeader title="list" subheader="" />
+            <CardHeader title="Game list" subheader="" />
           </Box>
         </Card>
       </Box>
