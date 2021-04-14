@@ -3,11 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import { Box } from "@material-ui/core";
+import GameTable from "./Table";
 
 const useStyles = makeStyles(() => ({
   root: {
     minWidth: 800,
-    // height: 2000,
+    textAlign: "center",
   },
   root2: {
     minWidth: 700,
@@ -37,7 +38,8 @@ export default function Wishlist() {
 
         <Card className={classes.root2}>
           <Box>
-            <CardHeader title="list" subheader="" />
+            {/* <CardHeader title="list" subheader="" /> */}
+            <GameTable />
           </Box>
         </Card>
       </Box>

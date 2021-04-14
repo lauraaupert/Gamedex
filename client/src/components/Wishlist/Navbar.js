@@ -70,7 +70,12 @@ export default function NavBar() {
           <Typography variant="h6" className={classes.title}>
             Gamedex
           </Typography>
-          <Typography onClick variant="h6" className={classes.title}>
+          <Typography
+            onClick
+            variant="h6"
+            className={classes.title}
+            href="https://store.steampowered.com"
+          >
             Steam
           </Typography>
           <Typography variant="h6" className={classes.title}>
