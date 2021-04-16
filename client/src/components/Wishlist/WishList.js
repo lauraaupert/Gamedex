@@ -8,7 +8,6 @@ import GameTable from "../Table/Table";
 const useStyles = makeStyles(() => ({
   root: {
     minWidth: 800,
-    // height: 2000,
   },
   root2: {
     minWidth: 700,
@@ -18,6 +17,14 @@ const useStyles = makeStyles(() => ({
     height: 0,
     paddingcenter: "100%", // 16:9
   },
+  // body: {
+  //   background: rgb(34,193,195),
+  //   background: linear-gradient(
+  //     0deg
+  //     rgba(34,193,195,1) 0%
+  //     rgba(4,62,25,0.9724264705882353) 36%
+  //     );
+  // }
 }));
 
 export default function Wishlist() {
@@ -25,7 +32,7 @@ export default function Wishlist() {
 
   return (
     <div>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" textAlign="center">
         <Card className={classes.root}>
           <Box>
             <CardHeader title="WistList" subheader="Choose Your Game" />
@@ -33,7 +40,7 @@ export default function Wishlist() {
         </Card>
       </Box>
       <br></br>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" textAlign="center">
         <Card className={classes.root2}>
           <Box>
             <CardHeader title="Game list" subheader="" />

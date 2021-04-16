@@ -9,7 +9,7 @@ const columns = [
   {
     field: "platform",
     headerName: "Plaform",
-    description: "This column has a value getter and is not sortable.",
+
     sortable: true,
     width: 160,
     // valueGetter: (params) =>
@@ -21,13 +21,10 @@ const columns = [
 
 const rows = [{ id: 1, cost: "Snow", Name: "Jon", platform: 35 }];
 
-export default function GameTable() {
-  // const [hide,sethide]= () =>{
-  //     if
-  // }
+export default (GameTable) => {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
     </div>
   );
-}
+};
