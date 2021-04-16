@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import { Box } from "@material-ui/core";
+import GameTable from "../Table/Table";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -31,11 +32,13 @@ export default function Wishlist() {
           </Box>
         </Card>
       </Box>
-
+      <br></br>
       <Box display="flex" justifyContent="center">
         <Card className={classes.root2}>
           <Box>
             <CardHeader title="Game list" subheader="" />
+
+            <GameTable />
           </Box>
         </Card>
       </Box>
