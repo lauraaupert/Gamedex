@@ -47,7 +47,7 @@ export default {
 //     searchTerm: "",
 //   });
 //   const handleSave = function handleSave(gameData) {
-//     API.saveBook(gameData);
+//     API.saveGame(gameData);
 //     setSaveGames({
 //       ...saveGames,
 //       savedGames: gameData,
