@@ -9,23 +9,17 @@ import GameTable from "../Table/Table";
 const useStyles = makeStyles(() => ({
   root: {
     minWidth: 800,
+    opacity: "20%",
   },
   root2: {
     minWidth: 700,
     height: 700,
+    opacity: "20%",
   },
   media: {
     height: 0,
     paddingcenter: "100%", // 16:9
   },
-  // body: {
-  //   background: rgb(34,193,195),
-  //   background: linear-gradient(
-  //     0deg
-  //     rgba(34,193,195,1) 0%
-  //     rgba(4,62,25,0.9724264705882353) 36%
-  //     );
-  // }
 }));
 
 export default function Wishlist() {
