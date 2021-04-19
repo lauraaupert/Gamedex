@@ -3,6 +3,8 @@ import "./App.css";
 import Wishlist from "./components/Wishlist/WishList";
 import Navbar from "./components/Wishlist/Navbar";
 import SignInOutContainer from "./components/containers";
+import NoMatch from "./pages/noMatch";
+import Landing from "./pages/landing"
 
 // import VideoBg from "./components/VideoBg";
 
@@ -14,14 +16,14 @@ function App() {
   return (
   <Router>
     
-      <Switch>
+      
       <div className="App">
-
+      <Switch>
       {/* <VideoBg /> */}
 
         <Route exact path="/">
-
-      <SignInOutContainer />
+    <Landing />
+      
       </Route>
      
       <Route  exact path={["/Navbar","/Wishlist"]}>
@@ -29,9 +31,12 @@ function App() {
       {/* <VideoBg /> */}
       <Wishlist />
       </Route>
-      </div>
+      <Route>
+            <NoMatch />
+          </Route>
+      
       </Switch>
-    
+      </div>
     </Router>
   );
 }
