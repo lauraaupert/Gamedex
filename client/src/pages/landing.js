@@ -3,7 +3,7 @@ import SignInOutContainer from "../components/containers/index";
 
 function Landing() {
     return(
-<SignInOutContainer />
+        <SignInOutContainer />
     )
 } 
 
