@@ -21,6 +21,11 @@ const useStyles = makeStyles(() => ({
     paddingcenter: "100%", // 16:9
   },
 }));
+// Add api here with this.state
+const rows = [
+  { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
+  { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
+];
 
 export default function Wishlist() {
   const classes = useStyles();
@@ -35,15 +40,19 @@ export default function Wishlist() {
         </Card>
       </Box>
       <br></br>
-      <Box display="flex" justifyContent="center" textAlign="center">
-        <Card className={classes.root2}>
-          <Box>
-            <CardHeader title="Game list" subheader="" />
+      {rows.length ? (
+        <Box display="flex" justifyContent="center" textAlign="center">
+          <Card className={classes.root2}>
+            <Box>
+              <CardHeader title="Game list" subheader="" />
 
-            <GameTable />
-          </Box>
-        </Card>
-      </Box>
+              <GameTable rows={rows} />
+            </Box>
+          </Card>
+        </Box>
+      ) : (
+        <h1>Nothing is in here go away</h1>
+      )}
     </div>
   );
 }
