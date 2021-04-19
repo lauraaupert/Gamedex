@@ -3,10 +3,12 @@ import "./App.css";
 import Wishlist from "./components/Wishlist/WishList";
 import Navbar from "./components/Wishlist/Navbar";
 import SignInOutContainer from "./components/containers";
+
+// import VideoBg from "./components/VideoBg";
+
 import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
 
 
-import VideoBg from "./components/VideoBg";
 
 function App() {
   return (
@@ -14,8 +16,11 @@ function App() {
     
       <Switch>
       <div className="App">
+
+      {/* <VideoBg /> */}
+
         <Route exact path="/">
-      <VideoBg />
+
       <SignInOutContainer />
       </Route>
      
