@@ -8,6 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
+
 const Signup=() => {
 const paperStyle={padding:20 ,width:300, margin:"0 auto"}
 const headerStyle={margin:0}

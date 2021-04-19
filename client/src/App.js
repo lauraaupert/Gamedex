@@ -3,18 +3,31 @@ import "./App.css";
 import Wishlist from "./components/Wishlist/WishList";
 import Navbar from "./components/Wishlist/Navbar";
 import SignInOutContainer from "./components/containers";
+import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
+
+
 import VideoBg from "./components/VideoBg";
 
 function App() {
   return (
-    <div>
+  <Router>
+    
+      <Switch>
       <div className="App">
+        <Route exact path="/">
       <VideoBg />
       <SignInOutContainer />
-      </div>
+      </Route>
+     
+      <Route  exact path={["/Navbar","/Wishlist"]}>
       <Navbar />
+      <VideoBg />
       <Wishlist />
-    </div>
+      </Route>
+      </div>
+      </Switch>
+    
+    </Router>
   );
 }
 
