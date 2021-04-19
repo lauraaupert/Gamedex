@@ -15,7 +15,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
 // Define API routes here
 app.use(routes)
 
@@ -44,7 +43,7 @@ const userSeed = [
 ]
 db.User
   .deleteMany({})
-  .then(() => db.User.collection.insertMany(userSeed))
+  .then(() => db.User.collection.create(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
