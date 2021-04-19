@@ -51,12 +51,12 @@ const Login = ({handleChange}) => {
         </Formik>
         <Typography >
           <Link href="#" >
-            Forgot password ?
+            Forgot password?
         </Link>
         </Typography>
-        <Typography > Do you have an account ?
+        <Typography > Do you have an account?
         <Link href="#" onClick={() => handleChange("event", 1)} >
-            Sign up!
+            <br /> Sign up!
         </Link>
         </Typography>
       </Paper>
