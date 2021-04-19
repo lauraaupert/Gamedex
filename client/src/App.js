@@ -26,7 +26,7 @@ function App() {
      
       <Route  exact path={["/Navbar","/Wishlist"]}>
       <Navbar />
-      <VideoBg />
+      {/* <VideoBg /> */}
       <Wishlist />
       </Route>
       </div>
