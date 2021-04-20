@@ -1,13 +1,18 @@
 import React from "react";
-import "./styles/App.css";
-import Wishlist from "./components/Wishlist/WishList";
-import Navbar from "./components/Wishlist/Navbar";
+
+import "./App.css";
+import Wishlist from "./components/Wishlist";
+import Navbar from "./components/NavBar";
+
 import SignInOutContainer from "./components/containers";
+import NoMatch from "./pages/noMatch";
+import Landing from "./pages/landing"
 
 
 // import VideoBg from "./components/VideoBg";
 
 import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
+import WishlistPage from "./pages/wishlist";
 
 
 
@@ -15,24 +20,26 @@ function App() {
   return (
   <Router>
     
-      <Switch>
+      
       <div className="App">
-
+      <Switch>
       {/* <VideoBg /> */}
 
         <Route exact path="/">
-
-      <SignInOutContainer />
+    <Landing />
+      
       </Route>
      
-      <Route  exact path={["/Navbar","/Wishlist"]}>
-      <Navbar />
-      {/* <VideoBg /> */}
-      <Wishlist />
+      <Route  exact path="/Wishlist">
+      <WishlistPage />
       </Route>
-      </div>
+      <Route>
+            <NoMatch />
+          </Route>
+      
       </Switch>
-    
+
+      </div>
 
     </Router>
   );

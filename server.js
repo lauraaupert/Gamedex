@@ -46,10 +46,11 @@ const userSeed = [
 ]
 db.User
   .deleteMany({})
-  .then(() => db.User.collection.create(userSeed))
+  .then(() => db.User.create(userSeed))
   .then(data => {
 
-    console.log(data.result.n + " records inserted!");
+    // console.log(data.result.n + " records inserted!");
+
     process.exit(0);
   })
   .catch((err) => {
