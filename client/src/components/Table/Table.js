@@ -12,19 +12,24 @@ const columns = [
 
     sortable: true,
     width: 160,
-    // valueGetter: (params) =>
-    //   `${params.getValue("firstName") || ""} ${
-    //     params.getValue("lastName") || ""
-    //   }`,
+    valueGetter: (params) =>
+      `${params.getValue("firstName") || ""} ${
+        params.getValue("lastName") || ""
+      }`,
   },
 ];
 
-const rows = [{ id: 1, cost: "Snow", Name: "Jon", platform: 35 }];
+// const rows = [{ id: 1, cost: "Snow", Name: "Jon", platform: 35 }];
 
-export default (GameTable) => {
+export default function GameTable(props) {
   return (
     <div style={{ height: 400, width: "100%" }}>
-      <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+      <DataGrid
+        rows={props.rows}
+        columns={columns}
+        pageSize={5}
+        checkboxSelection
+      />
     </div>
   );
-};
+}

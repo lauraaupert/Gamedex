@@ -1,10 +1,13 @@
 import React from "react";
+
 import "./App.css";
 import Wishlist from "./components/Wishlist";
 import Navbar from "./components/NavBar";
+
 import SignInOutContainer from "./components/containers";
 import NoMatch from "./pages/noMatch";
 import Landing from "./pages/landing"
+
 
 // import VideoBg from "./components/VideoBg";
 
@@ -35,7 +38,9 @@ function App() {
           </Route>
       
       </Switch>
+
       </div>
+
     </Router>
   );
 }
