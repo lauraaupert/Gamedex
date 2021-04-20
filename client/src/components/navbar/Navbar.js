@@ -4,22 +4,33 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+// import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+// import Switch from "@material-ui/core/Switch";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import "../../styles/stylesN.css";
+//  import { Route } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(0),
-  },
+  // menuButton: {
+  //   marginRight: theme.spacing(0),
+  // },
   title: {
     flexGrow: 1,
   },
 }));
+
+const NavStlye = {
+  background: "darkgreen",
+  color: "black",
+  fontvariant: "all-petite-caps",
+};
 
 export default function NavBar() {
   const classes = useStyles();
@@ -42,25 +53,24 @@ export default function NavBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
-          <IconButton
+        <Toolbar style={NavStlye}>
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
-            // onClick={link}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography variant="h6" className={classes.title}>
             Gamedex
           </Typography>
-          <Typography onClick variant="h6" className={classes.title}>
+          {/* <Typography onClick variant="h6" className={classes.title}>
             Steam
           </Typography>
           <Typography variant="h6" className={classes.title}>
             Epic
-          </Typography>
+          </Typography> */}
           {auth && (
             <div>
               <IconButton
@@ -89,6 +99,10 @@ export default function NavBar() {
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My Wishlist</MenuItem>
+
+                {/* <Route exact path="/Wishlist" component={Wishlist}>
+                  <MenuItem onClick={handleClose}>My Wishlist</MenuItem>
+                </Route> */}
               </Menu>
             </div>
           )}
