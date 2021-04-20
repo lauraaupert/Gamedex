@@ -1,6 +1,7 @@
 // import React from "react";
 // import gameMontage from "../video/gameMontage.mp4";
 
+
 // export default function VideoBg() {
 //   return (
 //     <div className="vid">
@@ -24,3 +25,4 @@
 //     </div>
 //   );
 // }
+
