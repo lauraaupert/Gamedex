@@ -1,3 +1,16 @@
+import React, { useEffect, useState } from "react";
+import SignInOutContainer from "../components/containers/index";
+
+function Landing() {
+    return(
+        <SignInOutContainer />
+    )
+} 
+
+export default Landing;
+
+
+
 // 'use strict';
 
 // import React, {Component} from 'react';
