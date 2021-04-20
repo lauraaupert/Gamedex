@@ -1,32 +1,32 @@
 import React from "react";
 
 import "./styles/App.css";
-import Wishlist from "./components/Wishlist";
-import Navbar from "./components/NavBar";
 
-import SignInOutContainer from "./components/containers";
 import NoMatch from "./pages/noMatch";
 import Landing from "./pages/landing"
-
-
-// import VideoBg from "./components/VideoBg";
-
 import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
 import WishlistPage from "./pages/wishlist";
+import LoginPage from "./pages/loginPage"
 
 
 
 function App() {
+  
   return (
   <Router>
     
       
       <div className="App">
+
       <Switch>
       {/* <VideoBg /> */}
 
         <Route exact path="/">
     <Landing />
+      
+      </Route>
+      <Route exact path="/login">
+    <LoginPage />
       
       </Route>
      
