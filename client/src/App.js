@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./App.css";
+import "./styles/App.css";
 import Wishlist from "./components/Wishlist";
 import Navbar from "./components/NavBar";
 
