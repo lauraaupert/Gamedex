@@ -40,12 +40,15 @@ mongoose.connect(
 const userSeed = [
   {
     username: "The Dead Zone",
-    password: "Stephen King",
-  },
-];
-db.User.deleteMany({})
-  .then(() => db.User.collection.insertMany(userSeed))
-  .then((data) => {
+
+    password: "Stephen King"
+  }
+]
+db.User
+  .deleteMany({})
+  .then(() => db.User.collection.create(userSeed))
+  .then(data => {
+
     console.log(data.result.n + " records inserted!");
     process.exit(0);
   })

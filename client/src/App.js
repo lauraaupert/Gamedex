@@ -3,22 +3,37 @@ import "./styles/App.css";
 import Wishlist from "./components/Wishlist/WishList";
 import Navbar from "./components/Wishlist/Navbar";
 import SignInOutContainer from "./components/containers";
-import VideoBg from "./components/VideoBg";
-// import { Switch } from "@material-ui/core";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
+// import VideoBg from "./components/VideoBg";
+
+import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
+
+
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <div className="App">
-        <VideoBg />
-      </div>
+  <Router>
+    
       <Switch>
-        <Route exact path="/" component={SignInOutContainer} />
-        <Route exact path="/Wishlist" component={Wishlist} />
-        {/* <Route exact path="/" component={Saved} /> */}
+      <div className="App">
+
+      {/* <VideoBg /> */}
+
+        <Route exact path="/">
+
+      <SignInOutContainer />
+      </Route>
+     
+      <Route  exact path={["/Navbar","/Wishlist"]}>
+      <Navbar />
+      {/* <VideoBg /> */}
+      <Wishlist />
+      </Route>
+      </div>
       </Switch>
+    
+
     </Router>
   );
 }
