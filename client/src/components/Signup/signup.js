@@ -1,11 +1,7 @@
 import { Avatar, Button, Grid, Paper, TextField, Typography } from "@material-ui/core";
 import React from "react";
 import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 const Signup=() => {
@@ -29,16 +25,7 @@ const marginTop={marginTop:10}
         <form>
           <TextField fullWidth label="Name" placeholder="Enter your name" />
           <TextField fullWidth label="Email" placeholder="Enter your Email" />
-          <FormControl component="fieldset" style={marginTop}>
-            <FormLabel component="legend">Gender</FormLabel>
-            <RadioGroup aria-label="gender" name="gender" style={{ display: "initial" }}>
-              <FormControlLabel value="female" control={<Radio />} label="Female" />
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-              <FormControlLabel value="other" control={<Radio />} label="Other" />
 
-            </RadioGroup>
-          </FormControl>
-          <TextField fullWidth label="Phone Number" placeholder="Enter your Phone Number" />
           <TextField fullWidth label="Password" placeholder="Create Your Password" />
           <TextField fullWidth label="Confirm Password" placeholder="Confirm Your Password" />
           <FormControlLabel
