@@ -9,12 +9,12 @@ import GameTable from "../Table/Table";
 const useStyles = makeStyles(() => ({
   root: {
     minWidth: 800,
-    opacity: "20%",
+    opacity: "50%",
   },
   root2: {
     minWidth: 700,
     height: 700,
-    opacity: "20%",
+    opacity: "50%",
   },
   media: {
     height: 0,
@@ -27,7 +27,7 @@ const rows = [
   { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
 ];
 
-export default function Wishlist() {
+function Wishlist() {
   const classes = useStyles();
 
   return (
@@ -56,3 +56,4 @@ export default function Wishlist() {
     </div>
   );
 }
+export default Wishlist;
