@@ -87,7 +87,6 @@ app.get("*", (req, res) => {
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/gamedex",
-  // "mongodb+srv://laura-aupert:AtlasHero@cluster0.zwltc.mongodb.net/gamedex?retryWrites=true&w=majority" 
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
