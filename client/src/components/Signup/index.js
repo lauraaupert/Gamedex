@@ -9,6 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from "axios";
 
+
 const Signup=() => {
 const [name, setName] = useState("");
 const [email, setEmail] = useState("");
@@ -49,6 +50,7 @@ async function signup(e) {
         <form onSubmit={signup}>
           <TextField fullWidth label="Name" placeholder="Enter your name" onChange={(e) => setName(e.target.value)} value={name}/>
           <TextField fullWidth label="Email" placeholder="Enter your Email" onChange={(e) => setEmail(e.target.value)} value={email}/>
+
           <FormControl component="fieldset" style={marginTop}>
             <FormLabel component="legend">Gender</FormLabel>
             <RadioGroup aria-label="gender" name="gender" style={{ display: "initial" }}>
