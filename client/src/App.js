@@ -12,7 +12,7 @@ import LoginPage from "./pages/loginPage"
 
 
 
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 function App() {
   
   return (
