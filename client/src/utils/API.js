@@ -4,12 +4,12 @@ import axios from "axios";
 
 export default {
 
-  // searchTerms: function(query) {
-  //   return axios.get(
-  //     "https://api.rawg.io/api/games?key=" + REACT_APP_APIKEY + "&search=" + query 
-  //       // "&limit=1&format=json&origin=*"
-  //   );
-  // },
+  searchTerms: function(query) {
+    return axios.get(
+      "https://api.rawg.io/api/games?key=" + process.env.REACT_APP_APIKEY + "&search=" + query 
+        // "&limit=1&format=json&origin=*"
+    );
+  },
     // Gets all saved games
     getGames: function() {
       return axios.get("/api/games");
