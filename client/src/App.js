@@ -1,37 +1,49 @@
 import React from "react";
-import "./App.css";
-import Wishlist from "./components/Wishlist/WishList";
-import Navbar from "./components/Wishlist/Navbar";
-import SignInOutContainer from "./components/containers";
+
+import "./styles/App.css";
+
+import NoMatch from "./pages/noMatch";
+import Landing from "./pages/landing"
 import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
-import VideoBg from "./components/VideoBg";
-import HomePage from "./components/Home/Home";
-import axios from "axios"
+
+import WishlistPage from "./pages/wishlist";
+import LoginPage from "./pages/loginPage"
+
+
+
 
 axios.defaults.withCredentials = true;
 function App() {
+  
   return (
   <Router>
     
-      <Switch>
+      
       <div className="App">
+
+      <Switch>
+      {/* <VideoBg /> */}
+
         <Route exact path="/">
-      <VideoBg />
-      <SignInOutContainer /> 
-       </Route>
-       <Route exact path="/Home">
-      <VideoBg />
-      <HomePage /> 
-       </Route>
-     
-      <Route  exact path={["/Navbar","/Wishlist"]}>
-      <Navbar />
-      <VideoBg />
-      <Wishlist />
+    <Landing />
+      
       </Route>
-      </div>
+      <Route exact path="/login">
+    <LoginPage />
+      
+      </Route>
+     
+      <Route  exact path="/Wishlist">
+      <WishlistPage />
+      </Route>
+      <Route>
+            <NoMatch />
+          </Route>
+      
       </Switch>
-    
+
+      </div>
+
     </Router>
   );
 }

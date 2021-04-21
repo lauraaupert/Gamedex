@@ -1,3 +1,15 @@
+import React, { useEffect, useState } from "react";
+
+function Landing() {
+    return(
+        <h1>Matt's sexy landing page</h1> 
+    )
+} 
+
+export default Landing;
+
+
+
 // 'use strict';
 
 // import React, {Component} from 'react';
