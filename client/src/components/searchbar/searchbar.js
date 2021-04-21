@@ -3,6 +3,7 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button, AppBar, Toolbar } from "@material-ui/core";
+import NavBar from "../NavBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,9 +59,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-// const handleChange = (event, newValue) => {
-//   setValue(newValue);
-// };
+const login = [
+  //   { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
+  //   { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
+];
 export default function SearchBar() {
   const classes = useStyles();
   const btnStyle = { backgroundColor: "#00801c", margin: "8px 0" };
@@ -71,38 +73,49 @@ export default function SearchBar() {
   };
   return (
     <div>
-      <AppBar position="static">
-        <Toolbar style={NavStlye}>
-          <Button
-            type="submit"
-            style={btnStyle}
-            variant="contained"
-            color="secondary"
-            halfWidth
-            href="/login"
-            mergin="right"
-          >
-            Login
-          </Button>
-        </Toolbar>
-      </AppBar>
-
+      {login.length ? (
+        <NavBar />
+      ) : (
+        <AppBar position="static">
+          <Toolbar style={NavStlye}>
+            <Button
+              type="submit"
+              style={btnStyle}
+              variant="contained"
+              color="secondary"
+              halfWidth
+              href="/login"
+              mergin="right"
+            >
+              Login
+            </Button>
+          </Toolbar>
+        </AppBar>
+      )}
       <br></br>
 
-      <div className={classes.root}>
-        <div className={classes.search}>
-          <h1>What Game do you want? </h1>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
+      <div className="form-group">
+        <div className={classes.root}>
+          <div className={classes.search}>
+            <h1>What Game do you want? </h1>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ "aria-label": "search" }}
+            />
+            <button
+              //   onClick={props.handleFormSubmit}
+              className="btn btn-primary mt-3"
+            >
+              Search
+            </button>
           </div>
-          <InputBase
-            placeholder="Search…"
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput,
-            }}
-            inputProps={{ "aria-label": "search" }}
-          />
         </div>
       </div>
     </div>
