@@ -19,7 +19,7 @@ module.exports = app => {
         db.User.create({
             email: req.body.email,
             password: req.body.password,
-            userName: req.body.userName,
+            name: req.body.name,
         })
             .then(user => {
                 res.status(200).json(user);
@@ -32,7 +32,7 @@ module.exports = app => {
     app.get("/auth/success", (req, res) => {
         console.log("The user object is ", req.user)
         if (req.user) {
-                console.log("OBJECT!")
+                console.log("User exists")
                 res.json({
                     success: true,
                     message: "User has successfully authenticated",
@@ -52,7 +52,7 @@ module.exports = app => {
 
     app.get("/api/users/:id", (req, res) => {
         const id = req.params.id;
-        db.User.findOne({ "_id" : id })
+        db.User.findOne({ _id : id })
             .then(data => res.json(data))
     })
 
@@ -60,7 +60,7 @@ module.exports = app => {
         const id = req.params.id;
         db.User.update(
             // { onboard: true },
-            { "_id" : id })
+            { _id : id })
             .then(updated => res.json(updated))
     })
 
