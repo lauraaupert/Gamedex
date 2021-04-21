@@ -5,11 +5,14 @@ import "./styles/App.css";
 import NoMatch from "./pages/noMatch";
 import Landing from "./pages/landing"
 import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
+
 import WishlistPage from "./pages/wishlist";
 import LoginPage from "./pages/loginPage"
 
 
 
+
+// axios.defaults.withCredentials = true;
 function App() {
   
   return (
