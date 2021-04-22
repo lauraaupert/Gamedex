@@ -1,6 +1,6 @@
 import React from "react";
 import Wishlist from "../components/Wishlist/index";
-import Navbar from "../components/NavBar/index";
+import Navbar from "../components/navbar/index.js";
 
 function WishlistPage() {
   return (
