@@ -4,6 +4,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from "axios";
+import Passport from "../utils/passport"
+
 
 const Login = ({handleChange}) => {
   const [userName, setUserName] = useState("");
@@ -15,7 +17,8 @@ const Login = ({handleChange}) => {
     e.preventDefault();
     try {
      const loginData = {
-       userName,
+       email,
+       name,
        password,
      };
      await axios.post("http://localhost:3000/login", loginData);
@@ -47,7 +50,9 @@ const Login = ({handleChange}) => {
             label="Remember me"
           />
           
-          <Button href="/Wishlist" type="submit" style={btnStyle} variant="contained" color="secondary" fullWidth >
+
+          <Button href="/wishlist" type="submit" style={btnStyle} variant="contained" color="secondary" fullWidth >
+
             Login
         </Button>
         
