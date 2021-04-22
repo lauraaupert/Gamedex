@@ -12,7 +12,6 @@ import axios from "axios";
 
 const Signup=() => {
 const [name, setName] = useState("");
-const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -25,7 +24,6 @@ async function signup(e) {
   e.preventDefault();
   try {
    const signupData = {
-     email,
      password,
      confirmPassword,
    };
