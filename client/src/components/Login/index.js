@@ -4,11 +4,11 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from "axios";
-import Passport from "../utils/passport"
+// import Passport from "../utils/passport"
 
 
 const Login = ({handleChange}) => {
-  const [userName, setUserName] = useState("");
+  const [name, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const paperStyle={padding :20,height:"61.5vh",width:300, margin:"0 auto",backgroundColor:"gray"}
   const avatarStyle={backgroundColor:"black"}
@@ -17,7 +17,6 @@ const Login = ({handleChange}) => {
     e.preventDefault();
     try {
      const loginData = {
-       email,
        name,
        password,
      };
@@ -37,7 +36,7 @@ const Login = ({handleChange}) => {
         </Grid>
 
         <form onSubmit={login}>
-          <TextField label="Username" name="username" placeholder="Enter username" fullWidth required onChange={(e) => setUserName(e.target.value)} value={userName}/>
+          <TextField label="Username" name="username" placeholder="Enter username" fullWidth required onChange={(e) => setUserName(e.target.value)} value={name}/>
           <TextField label="Password" name="password" placeholder="Enter Password" type="password" fullWidth required onChange={(e) => setPassword(e.target.value)} value={password}/>
           <FormControlLabel
             name="remember"
