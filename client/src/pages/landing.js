@@ -1,5 +1,6 @@
 import React from "react";
-import SearchBar from "../components/searchbar/searchbar";
+import SearchBar from "../components/searchbar";
+import GameTable from "../components/Table";
 
 function Landing() {
   return (
