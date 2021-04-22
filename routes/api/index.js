@@ -4,6 +4,6 @@ const userRoutes = require("./user");
 
 // Book routes
 router.use("/api/games", gameRoutes);
-router.use("/api/", userRoutes)
+router.use("/api/users", userRoutes)
 
 module.exports = router;
