@@ -13,11 +13,12 @@ const handleChange = (event, newValue) => {
   setValue(newValue);
 };
 const tabStyle = {color:"white"}
-const paperStyle={width:340,margin:"20px auto", opacity:"75%",backgroundColor:"black"}
+const paperStyle={width:340,margin:"20px auto",borderRadius:"20px",backgroundColor:"black"}
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
     return (
+      
       <div 
         role="tabpanel"
         hidden={value !== index}
@@ -31,6 +32,7 @@ function TabPanel(props) {
           </Box>
         )}
       </div>
+      
     );
   }
 

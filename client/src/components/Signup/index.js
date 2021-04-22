@@ -9,13 +9,14 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from "axios";
 
+
 const Signup=() => {
 const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [confirmPassword, setConfirmPassword] = useState("");
 
-const paperStyle={padding:20 ,width:300, margin:"0 auto",backgroundColor:"gray"}
+const paperStyle={padding:20 ,width:300, margin:"0 auto",borderRadius:"20px"}
 const headerStyle={margin:0}
 const avatarStyle={backgroundColor:"black"}
 const btnStyle={backgroundColor:"black", color:"white"}
@@ -49,6 +50,7 @@ async function signup(e) {
         <form onSubmit={signup}>
           <TextField fullWidth label="Name" placeholder="Enter your name" onChange={(e) => setName(e.target.value)} value={name}/>
           <TextField fullWidth label="Email" placeholder="Enter your Email" onChange={(e) => setEmail(e.target.value)} value={email}/>
+
           <FormControl component="fieldset" style={marginTop}>
             <FormLabel component="legend">Gender</FormLabel>
             <RadioGroup aria-label="gender" name="gender" style={{ display: "initial" }}>
@@ -70,7 +72,7 @@ async function signup(e) {
             }
             label="I accept terms and conditions"
           />
-          <Button type="submit" style={btnStyle} varient="contained" >
+          <Button href="/Login" type="submit" style={btnStyle} varient="contained" >
             Sign up
           </Button>
         </form>
