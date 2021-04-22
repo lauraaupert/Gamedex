@@ -49,18 +49,6 @@ async function signup(e) {
         </Grid>
         <form onSubmit={signup}>
           <TextField fullWidth label="Name" placeholder="Enter your name" onChange={(e) => setName(e.target.value)} value={name}/>
-          <TextField fullWidth label="Email" placeholder="Enter your Email" onChange={(e) => setEmail(e.target.value)} value={email}/>
-
-          <FormControl component="fieldset" style={marginTop}>
-            <FormLabel component="legend">Gender</FormLabel>
-            <RadioGroup aria-label="gender" name="gender" style={{ display: "initial" }}>
-              <FormControlLabel value="female" control={<Radio />} label="Female" />
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-              <FormControlLabel value="other" control={<Radio />} label="Other" />
-
-            </RadioGroup>
-          </FormControl>
-          <TextField fullWidth label="Phone Number" placeholder="Enter your Phone Number" onChange={(e) => setPassword(e.target.value)} value={password}/>
           <TextField fullWidth label="Password" placeholder="Create Your Password"/>
           <TextField fullWidth label="Confirm Password" placeholder="Confirm Your Password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}/>
           <FormControlLabel

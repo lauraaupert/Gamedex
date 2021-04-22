@@ -3,7 +3,7 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button, AppBar, Toolbar } from "@material-ui/core";
-import NavBar from "../NavBar";
+import NavBar from "../navbar/index";
 
 const useStyles = makeStyles((theme) => ({
   root: {
