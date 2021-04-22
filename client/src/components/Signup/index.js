@@ -29,7 +29,7 @@ async function signup(e) {
      password,
      confirmPassword,
    };
-   await axios.post("http://localhost:3000/api/users", signupData);
+   await axios.post("http://localhost:3000/signup", signupData);
   }catch(err){
     console.error(err);
   }
