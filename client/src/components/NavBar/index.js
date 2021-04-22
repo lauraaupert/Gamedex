@@ -11,7 +11,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 // import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import "../../styles/stylesN.css";
+
 //  import { Route } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,23 +54,10 @@ export default function NavBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar style={NavStlye}>
-          {/* <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton> */}
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title} href="/">
             Gamedex
           </Typography>
-          {/* <Typography onClick variant="h6" className={classes.title}>
-            Steam
-          </Typography>
-          <Typography variant="h6" className={classes.title}>
-            Epic
-          </Typography> */}
+
           {auth && (
             <div>
               <IconButton

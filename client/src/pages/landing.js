@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import SearchBar from "../components/searchbar/searchbar";
+import GameTable from "../components/Table/Table";
 
 function Landing() {
-    return(
-        <h1>Matt's sexy landing page</h1> 
-    )
-} 
+  return (
+    // <h1>Matt's sexy landing page</h1>
+    <SearchBar />
+  );
+}
 
 export default Landing;
-
-
 
 // 'use strict';
 
