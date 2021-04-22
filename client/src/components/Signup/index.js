@@ -1,11 +1,7 @@
 import { Avatar, Button, Grid, Paper, TextField, Typography } from "@material-ui/core";
 import React, { useState} from "react";
 import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from "axios";
 
