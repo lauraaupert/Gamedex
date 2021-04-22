@@ -2,7 +2,7 @@ import React from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 
 import { Button, AppBar, Toolbar } from "@material-ui/core";
-import NavBar from "../navbar/index";
+import NavBar from "../NavBar/index"
 // import GameTable from "../Table/Table";
 // import Autocomplete from "@material-ui/lab/Autocomplete";
 
