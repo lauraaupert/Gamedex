@@ -7,8 +7,8 @@ import Landing from "./pages/landing"
 import { BrowserRouter as Router, Route,  Switch } from "react-router-dom";
 
 import WishlistPage from "./pages/wishlist";
-import LoginPage from "./pages/loginPage"
-
+import LoginPage from "./pages/loginPage";
+import VideoBg from "./components/VideoBg/index"
 
 
 
@@ -22,11 +22,10 @@ function App() {
       <div className="App">
 
       <Switch>
-      {/* <VideoBg /> */}
 
         <Route exact path="/">
+        <VideoBg/>
     <Landing />
-      
       </Route>
       <Route exact path="/login">
     <LoginPage />
