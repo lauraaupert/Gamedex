@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/NavBar/index.js";
+import Navbar from "../components/navbar/index.js";
 
 function NoMatch() {
   return (
