@@ -18,10 +18,11 @@ const Login = ({handleChange}) => {
        userName,
        password,
      };
-     await axios.post("http://localhost:3000/api/users", loginData);
+     await axios.post("http://localhost:3000/login", loginData);
     }catch(err){
       console.error(err);
     }
+    
   }
   
   return(
@@ -46,7 +47,7 @@ const Login = ({handleChange}) => {
             label="Remember me"
           />
           
-          <Button href="/Home" type="submit" style={btnStyle} variant="contained" color="secondary" fullWidth >
+          <Button href="/Wishlist" type="submit" style={btnStyle} variant="contained" color="secondary" fullWidth >
             Login
         </Button>
         

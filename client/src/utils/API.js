@@ -27,12 +27,9 @@ export default {
       return axios.post("/api/games", gameData);
     },
     // Saves a user to the database
-    saveUser: function(userData) {
-      return axios.post("/api/users", userData);
-    },
-    getUsers: function() {
-      return axios.get("/api/users");
-    },
+    // getUsers: function() {
+    //   return axios.get("/api/users");
+    // },
     getUser: function(id) {
       return axios.get("/api/users/" + id);
     },
