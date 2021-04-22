@@ -1,28 +1,20 @@
 // import React from "react";
-// import gameMontage from "../video/gameMontage.mp4";
 
+// import classes from "../VideoBg";
 
-// export default function VideoBg() {
-//   return (
-//     <div className="vid">
-//       <video
-//         autoPlay
-//         loop
-//         muted
-//         style={{
-//           position: "absolute",
-//           width: "100%",
-//           left: "50%",
-//           top: "41.5%",
-//           height: "100%",
-//           objectFit: "cover",
-//           transform: "translate(-50%, -50%)",
-//           zIndex: "-1",
-//         }}
-//       >
-//         <source src={gameMontage} type="video/mp4" />
-//       </video>
+// const bgVid=() => {
+//     const videoSource = "https://vimeo.com/113983455"
+// return (
+//     <div className={classes.Container}>
+//         <video autoPlay="autoplay" loop="loop" muted className={classes.Video}>
+//             <source src = {videoSource} type="video/mp4"/>
+//             Your browser does not support the video tag.
+//         </video>
+//         <div className={classes.Content}>
+//                 <div className={classes.SubContent} >
+//                 </div>
+//             </div>
 //     </div>
-//   );
+//     )
 // }
-
+// export default bgVid

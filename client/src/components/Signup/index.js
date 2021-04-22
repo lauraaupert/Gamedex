@@ -2,6 +2,7 @@ import { Avatar, Button, Grid, Paper, TextField, Typography } from "@material-ui
 import React, { useState} from "react";
 import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 import Checkbox from '@material-ui/core/Checkbox';
 import axios from "axios";
 
@@ -43,6 +44,10 @@ async function signup(e) {
         </Grid>
         <form onSubmit={signup}>
           <TextField fullWidth label="Name" placeholder="Enter your name" onChange={(e) => setName(e.target.value)} value={name}/>
+
+          <FormControl component="fieldset" style={marginTop}>
+          </FormControl>
+          <TextField fullWidth label="Phone Number" placeholder="Enter your Phone Number" onChange={(e) => setPassword(e.target.value)} value={password}/>
           <TextField fullWidth label="Password" placeholder="Create Your Password"/>
           <TextField fullWidth label="Confirm Password" placeholder="Confirm Your Password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}/>
           <FormControlLabel

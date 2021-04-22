@@ -83,7 +83,6 @@ export default function SearchBar() {
               style={btnStyle}
               variant="contained"
               color="secondary"
-              halfWidth
               href="/login"
               mergin="right"
             >
