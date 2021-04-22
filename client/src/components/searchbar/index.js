@@ -2,7 +2,7 @@ import React from "react";
 import { fade, makeStyles } from "@material-ui/core/styles";
 
 import { Button, AppBar, Toolbar } from "@material-ui/core";
-import NavBar from "../NavBar/index"
+import Navbar from "../Navbar/index";
 // import GameTable from "../Table/Table";
 // import Autocomplete from "@material-ui/lab/Autocomplete";
 
@@ -56,7 +56,7 @@ export default function SearchBar() {
   return (
     <div>
       {login.length ? (
-        <NavBar />
+        <Navbar />
       ) : (
         <AppBar position="static">
           <Toolbar style={NavStlye}>
@@ -104,7 +104,7 @@ export default function SearchBar() {
 // import { fade, makeStyles } from "@material-ui/core/styles";
 // import SearchIcon from "@material-ui/icons/Search";
 // import { Button, AppBar, Toolbar } from "@material-ui/core";
-// import NavBar from "../navbar/index";
+// import Navbar from "../Navbar/index";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -176,7 +176,7 @@ export default function SearchBar() {
 //   return (
 //     <div>
 //       {login.length ? (
-//         <NavBar />
+//         <Navbar />
 //       ) : (
 //         <AppBar position="static">
 //           <Toolbar style={NavStlye}>
