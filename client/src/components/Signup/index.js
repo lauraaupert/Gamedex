@@ -11,7 +11,6 @@ const Signup=() => {
 const [name, setName] = useState("");
 const [password, setPassword] = useState("");
 const [confirmPassword, setConfirmPassword] = useState("");
-
 const paperStyle={padding:20 ,width:300, margin:"0 auto",backgroundColor:"gray"}
 const headerStyle={margin:0}
 const avatarStyle={backgroundColor:"black"}
@@ -47,8 +46,7 @@ async function signup(e) {
 
           <FormControl component="fieldset" style={marginTop}>
           </FormControl>
-          <TextField fullWidth label="Phone Number" placeholder="Enter your Phone Number" onChange={(e) => setPassword(e.target.value)} value={password}/>
-          <TextField fullWidth label="Password" placeholder="Create Your Password"/>
+          <TextField fullWidth label="Password" placeholder="Create Your Password" onChange={(e) => setPassword(e.target.value)} value={password}/>
           <TextField fullWidth label="Confirm Password" placeholder="Confirm Your Password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}/>
           <FormControlLabel
             control={
