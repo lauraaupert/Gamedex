@@ -22,15 +22,16 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade(theme.palette.common.white, .50),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: fade(theme.palette.common.white, .50),
     },
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
       width: "auto",
+      marginTop: 400,
     },
   },
   searchIcon: {
@@ -96,7 +97,7 @@ export default function SearchBar() {
       <div className="form-group">
         <div className={classes.root}>
           <div className={classes.search}>
-            <h1>What Game do you want? </h1>
+            <h1>Search for a game</h1>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>

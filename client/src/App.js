@@ -20,11 +20,11 @@ function App() {
     
       
       <div className="App">
-        <VideoBg/>
 
       <Switch>
 
         <Route exact path="/">
+        <VideoBg/>
     <Landing />
       </Route>
       <Route exact path="/login">
