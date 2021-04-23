@@ -1,12 +1,16 @@
 import axios from "axios";
+// const env = require('dotenv');
+const { REACT_APP_APIKEY } = process.env;
 
 // Export an object containing methods we'll use for accessing the RAWG API
 
 export default {
 
   searchTerms: function(query) {
+    console.log(REACT_APP_APIKEY)
     return axios.get(
-      "https://api.rawg.io/api/games?key=" + process.env.REACT_APP_APIKEY + "&search=" + query 
+      // "https://api.rawg.io/api/games?search="+ query 
+      "https://api.rawg.io/api/games?key=" + REACT_APP_APIKEY + "&search=" + query 
         // "&limit=1&format=json&origin=*"
     );
   },
