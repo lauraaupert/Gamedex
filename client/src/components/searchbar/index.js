@@ -8,6 +8,7 @@ import API from "../../utils/API";
 import axios from "axios";
 import GameTable from "../Table";
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -25,9 +26,9 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.5),
+    backgroundColor: fade(theme.palette.common.white, .50),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.5),
+      backgroundColor: fade(theme.palette.common.white, .50),
     },
     marginLeft: 0,
     width: "100%",
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       width: "auto",
       marginTop: 150,
+
     },
   },
   searchIcon: {
@@ -64,9 +66,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// function gameCall {
-//  searchTerms
-// }
 export default function SearchBar() {
   const classes = useStyles();
   const btnStyle = { backgroundColor: "#00801c", margin: "8px 0" };
@@ -75,6 +74,7 @@ export default function SearchBar() {
     color: "black",
     fontvariant: "all-petite-caps",
   };
+
   const login = [
     // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
     // { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
@@ -84,27 +84,28 @@ export default function SearchBar() {
     { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
   ];
 
+
   return (
     <div>
       {login.length ? (
         <Navbar />
       ) : (
-        <>
-          <AppBar position="static">
-            <Toolbar style={NavStlye}>
-              <Button
-                type="submit"
-                style={btnStyle}
-                variant="contained"
-                color="secondary"
-                href="/login"
-                mergin="right"
-              >
-                Login
-              </Button>
-            </Toolbar>
-          </AppBar>
-        </>
+
+        <AppBar position="static">
+          <Toolbar style={NavStlye}>
+            <Button 
+              type="submit"
+              style={btnStyle}
+              variant="contained"
+              color="secondary"
+              href="/login"
+              mergin="right"
+            >
+              Login
+            </Button>
+            <a href="/" style={{textDecoration:"none", color:"inherit", textAlign:"center"}}>Gamedex</a>
+          </Toolbar>
+        </AppBar>
       )}
       <br></br>
 
@@ -112,9 +113,9 @@ export default function SearchBar() {
         <div className={classes.root}>
           <div className={classes.search}>
             <h1>Search for a game</h1>
-            {/* <div className={classes.searchIcon}>
+            <div className={classes.searchIcon}>
               <SearchIcon />
-            </div> */}
+            </div>
             <InputBase
               placeholder="Search…"
               classes={{
@@ -133,7 +134,6 @@ export default function SearchBar() {
           </div>
         </div>
       </div>
-
       <br></br>
 
       {gameInput.length ? (
