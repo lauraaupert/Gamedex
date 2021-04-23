@@ -8,7 +8,6 @@ import API from "../../utils/API";
 import axios from "axios";
 import GameTable from "../Table";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -26,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, .50),
+    backgroundColor: fade(theme.palette.common.white, 0.5),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, .50),
+      backgroundColor: fade(theme.palette.common.white, 0.5),
     },
     marginLeft: 0,
     width: "100%",
@@ -36,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       width: "auto",
       marginTop: 150,
-
     },
   },
   searchIcon: {
@@ -79,21 +77,16 @@ export default function SearchBar() {
     // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
     // { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
   ];
-  const gameInput = [
-    // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
-    { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
-  ];
-
+  const gameInput = [{ id: 1, image: "Snow", name: "Jon", platform: 35 }];
 
   return (
     <div>
       {login.length ? (
         <Navbar />
       ) : (
-
         <AppBar position="static">
           <Toolbar style={NavStlye}>
-            <Button 
+            <Button
               type="submit"
               style={btnStyle}
               variant="contained"
@@ -103,7 +96,16 @@ export default function SearchBar() {
             >
               Login
             </Button>
-            <a href="/" style={{textDecoration:"none", color:"inherit", textAlign:"center"}}>Gamedex</a>
+            <a
+              href="/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                textAlign: "center",
+              }}
+            >
+              Gamedex
+            </a>
           </Toolbar>
         </AppBar>
       )}
@@ -139,9 +141,8 @@ export default function SearchBar() {
       {gameInput.length ? (
         <GameTable rows={gameInput} />
       ) : (
-        <h1>Nothing is in here go away</h1>
+        <h1> What game you want? </h1>
       )}
     </div>
   );
 }
-
