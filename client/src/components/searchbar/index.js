@@ -64,9 +64,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// function gameCall {
-//  searchTerms
-// }
 export default function SearchBar() {
   const classes = useStyles();
   const btnStyle = { backgroundColor: "#00801c", margin: "8px 0" };
@@ -75,6 +72,7 @@ export default function SearchBar() {
     color: "black",
     fontvariant: "all-petite-caps",
   };
+
   const login = [
     // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
     // { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
@@ -84,24 +82,32 @@ export default function SearchBar() {
   return (
     <div>
       {login.length ? (
-        <NavBar />
+        <Navbar />
       ) : (
-        <>
-          <AppBar position="static">
-            <Toolbar style={NavStlye}>
-              <Button
-                type="submit"
-                style={btnStyle}
-                variant="contained"
-                color="secondary"
-                href="/login"
-                mergin="right"
-              >
-                Login
-              </Button>
-            </Toolbar>
-          </AppBar>
-        </>
+        <AppBar position="static">
+          <Toolbar style={NavStlye}>
+            <Button
+              type="submit"
+              style={btnStyle}
+              variant="contained"
+              color="secondary"
+              href="/login"
+              mergin="right"
+            >
+              Login
+            </Button>
+            <a
+              href="/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                textAlign: "center",
+              }}
+            >
+              Gamedex
+            </a>
+          </Toolbar>
+        </AppBar>
       )}
       <br></br>
 
@@ -109,7 +115,9 @@ export default function SearchBar() {
         <div className={classes.root}>
           <div className={classes.search}>
             <h1>Search for a game</h1>
-
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
             <InputBase
               placeholder="Search…"
               classes={{
@@ -128,7 +136,6 @@ export default function SearchBar() {
           </div>
         </div>
       </div>
-
       <br></br>
 
       {gameInput.length ? (

@@ -50,8 +50,8 @@ export default function NavBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar style={NavStlye}>
-          <Typography variant="h6" onclick className={classes.title}>
-            Gamedex
+          <Typography variant="h6" className={classes.title}  href="/">
+              <a href="/" style={{textDecoration:"none", color:"inherit"}}>Gamedex</a>
           </Typography>
 
           {auth && (
