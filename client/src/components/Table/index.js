@@ -3,20 +3,8 @@ import { DataGrid } from "@material-ui/data-grid";
 
 const columns = [
   { field: "image", headerName: "Image", width: 130 },
-  { field: "name", headerName: "Name", width: 130 },
-  { field: "cost", headerName: "Cost", width: 130 },
-
-  {
-    field: "platform",
-    headerName: "Plaform",
-
-    sortable: true,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue("firstName") || ""} ${
-        params.getValue("lastName") || ""
-      }`,
-  },
+  { field: "name", headerName: "Name", width: 200 },
+  { field: "platform", headerName: "Platform", width: 200 },
 ];
 
 // const rows = [{ id: 1, cost: "Snow", Name: "Jon", platform: 35 }];

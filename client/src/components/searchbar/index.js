@@ -79,10 +79,7 @@ export default function SearchBar() {
     // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
     // { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
   ];
-  const gameInput = [
-    // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
-    { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
-  ];
+  const gameInput = [{ id: 1, image: "Snow", name: "Jon", platform: 35 }];
 
   return (
     <div>
@@ -112,9 +109,7 @@ export default function SearchBar() {
         <div className={classes.root}>
           <div className={classes.search}>
             <h1>Search for a game</h1>
-            {/* <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div> */}
+
             <InputBase
               placeholder="Search…"
               classes={{
@@ -139,7 +134,7 @@ export default function SearchBar() {
       {gameInput.length ? (
         <GameTable rows={gameInput} />
       ) : (
-        <h1>Nothing is in here go away</h1>
+        <h1> What game you want? </h1>
       )}
     </div>
   );
