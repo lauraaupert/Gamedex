@@ -23,8 +23,8 @@ const useStyles = makeStyles(() => ({
 }));
 // Add api here with this.state
 const rows = [
-  { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
-  { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
+  // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
+  // { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
 ];
 
 function Wishlist() {
