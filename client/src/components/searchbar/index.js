@@ -1,10 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button, AppBar, Toolbar } from "@material-ui/core";
-import Navbar from "../NavBar/index";
-// import API from "../../utils/API"
+import NavBar from "../NavBar/index";
+import API from "../../utils/API";
+import axios from "axios";
+import GameTable from "../Table";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
       width: "auto",
-      marginTop: 250,
+      marginTop: 150,
+
     },
   },
   searchIcon: {
@@ -61,10 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const login = [
-  //   { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
-  //   { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
-];
+
 export default function SearchBar() {
   const classes = useStyles();
   const btnStyle = { backgroundColor: "#00801c", margin: "8px 0" };
@@ -73,11 +74,23 @@ export default function SearchBar() {
     color: "black",
     fontvariant: "all-petite-caps",
   };
+
+  const login = [
+    // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
+    // { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
+  ];
+  const gameInput = [
+    // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
+    { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
+  ];
+
+
   return (
     <div>
       {login.length ? (
         <Navbar />
       ) : (
+
         <AppBar position="static">
           <Toolbar style={NavStlye}>
             <Button 
@@ -112,7 +125,8 @@ export default function SearchBar() {
               inputProps={{ "aria-label": "search" }}
             />
             <button
-              //   onClick={props.handleFormSubmit}
+              onClick={API.getGame}
+              id="Searchy"
               className="btn btn-primary mt-3"
             >
               Search
@@ -120,6 +134,14 @@ export default function SearchBar() {
           </div>
         </div>
       </div>
+      <br></br>
+
+      {gameInput.length ? (
+        <GameTable rows={gameInput} />
+      ) : (
+        <h1>Nothing is in here go away</h1>
+      )}
     </div>
   );
 }
+
