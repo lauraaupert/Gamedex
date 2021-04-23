@@ -22,10 +22,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //PASSPORT MIDDLEWARE
-app.use(cors({
-  origin: "http://localhost:3000",
-  credentials: true
-}))
+// app.use(cors({
+//   origin: "http://localhost:3000",
+//   credentials: true
+// }))
 
 app.use(session({
   secret: "secretelephant",
@@ -46,6 +46,8 @@ if (process.env.NODE_ENV === "production") {
 
 // Define API routes here
 app.use(routes);
+require("./routes/api/user.js")(app);
+require("./routes/api/games")(app, db);
 
 //PASSPORT TEST ROUTES
 // app.post("/login", (req,res) => {

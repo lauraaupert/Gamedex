@@ -87,7 +87,7 @@ export default function SearchBar() {
   return (
     <div>
       {login.length ? (
-        <NavBar />
+        <Navbar />
       ) : (
         <>
           <AppBar position="static">
@@ -144,3 +144,4 @@ export default function SearchBar() {
     </div>
   );
 }
+

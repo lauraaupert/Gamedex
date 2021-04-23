@@ -12,10 +12,12 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import axios from "axios";
-// import Passport from "../utils/passport";
+// import Passport from "../utils/passport"
 
-const Login = ({ handleChange }) => {
-  const [userName, setUserName] = useState("");
+
+const Login = ({handleChange}) => {
+  const [name, setUserName] = useState("");
+
   const [password, setPassword] = useState("");
   const paperStyle = {
     padding: 20,
@@ -29,13 +31,12 @@ const Login = ({ handleChange }) => {
   async function login(e) {
     e.preventDefault();
     try {
-      const loginData = {
-        // email,
-        userName,
-        password,
-      };
-      await axios.post("http://localhost:3000/login", loginData);
-    } catch (err) {
+     const loginData = {
+       name,
+       password,
+     };
+     await axios.post("http://localhost:3000/login", loginData);
+    }catch(err){
       console.error(err);
     }
   }
@@ -51,25 +52,9 @@ const Login = ({ handleChange }) => {
         </Grid>
 
         <form onSubmit={login}>
-          <TextField
-            label="Username"
-            name="username"
-            placeholder="Enter username"
-            fullWidth
-            required
-            onChange={(e) => setUserName(e.target.value)}
-            value={userName}
-          />
-          <TextField
-            label="Password"
-            name="password"
-            placeholder="Enter Password"
-            type="password"
-            fullWidth
-            required
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
+
+          <TextField label="Username" name="username" placeholder="Enter username" fullWidth required onChange={(e) => setUserName(e.target.value)} value={name}/>
+          <TextField label="Password" name="password" placeholder="Enter Password" type="password" fullWidth required onChange={(e) => setPassword(e.target.value)} value={password}/>
           <FormControlLabel
             name="remember"
             control={<Checkbox name="checkboxB" color="#00801c" />}
