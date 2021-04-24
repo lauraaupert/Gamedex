@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NavStlye = {
-  background: "darkgreen",
+  // background: "darkgreen",
   color: "black",
   fontvariant: "all-petite-caps",
 };
@@ -50,8 +50,7 @@ export default function NavBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar style={NavStlye}>
-          <Typography variant="h6" className={classes.title}  href="/">
-              <a href="/" style={{textDecoration:"none", color:"inherit"}}>Gamedex</a>
+          <Typography variant="h6" className={classes.title}>
           </Typography>
 
           {auth && (
