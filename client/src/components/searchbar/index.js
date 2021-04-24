@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
-import SearchIcon from "@material-ui/icons/Search";
 import { Button, AppBar, Toolbar } from "@material-ui/core";
 import Navbar from "../NavBar/index";
 import API from "../../utils/API";
 import axios from "axios";
 import GameTable from "../Table";
+import "../../components/searchbar.css"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,25 +26,14 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.5),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.5),
-    },
-    marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
+      textAlign: "-webkit-center",
+      marginLeft: "500px",
+      marginRight: "400px",
       width: "auto",
       marginTop: 150,
     },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
   },
   inputRoot: {
     color: "inherit",
@@ -66,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SearchBar() {
   const classes = useStyles();
-  const btnStyle = { backgroundColor: "#00801c", margin: "8px 0" };
+  const btnStyle = { backgroundColor: "green", margin: "8px 0" };
   const NavStlye = {
     background: "darkgreen",
     color: "black",
@@ -92,32 +81,19 @@ export default function SearchBar() {
               variant="contained"
               color="secondary"
               href="/login"
-              mergin="right"
             >
               Login
             </Button>
-            <a
-              href="/"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                textAlign: "center",
-              }}
-            >
-              Gamedex
-            </a>
+            <h1 style={{textAlign: 'center', fontFamily: "Kaushan Script", marginLeft:"825px"}}> GameDex</h1>
           </Toolbar>
         </AppBar>
       )}
-      <br></br>
 
       <div className="form-group">
         <div className={classes.root}>
           <div className={classes.search}>
-            <h1>Search for a game</h1>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
+            <h1 style={{textAlign: 'center', background:"darkgreen", fontVariantCaps: "all-petite-caps"}}>          
+            Search for a game</h1>
             <InputBase
               placeholder="Search…"
               classes={{
