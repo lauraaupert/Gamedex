@@ -11,7 +11,7 @@ export default {
     console.log(REACT_APP_APIKEY)
     return axios.get(
       // "https://api.rawg.io/api/games?search="+ query 
-      "https://api.rawg.io/api/games?key=" + REACT_APP_APIKEY + "&search=" + query 
+      "https://api.rawg.io/api/games?key=" + process.env.REACT_APP_APIKEY || REACT_APP_APIKEY + "&search=" + query 
         // "&limit=1&format=json&origin=*"
 
     );

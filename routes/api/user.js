@@ -1,20 +1,20 @@
-// Requiring our models and passport as we've configured it
+// // Requiring our models and passport as we've configured it
 var db = require("../../models");
 var passport = require("../../config/passport");
 const URL = process.env.APP_URL || "http://localhost:3000"
 
 module.exports = app => {
-    // Using the passport.authenticate middleware with our local strategy.
-    // If the user has valid login credentials, send them to the members page.
-    // Otherwise the user will be sent an error
+//     // Using the passport.authenticate middleware with our local strategy.
+//     // If the user has valid login credentials, send them to the members page.
+//     // Otherwise the user will be sent an error
     app.post("/api/login", passport.authenticate("local"), function (req, res) {
         res.json(req.user);
     });
 
 
-    // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-    // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-    // otherwise send back an error
+//     // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+//     // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+//     // otherwise send back an error
     app.post("/api/signup", function (req, res) {
         db.User.create({
             email: req.body.email,
@@ -51,47 +51,37 @@ module.exports = app => {
     });
 
     app.get("/api/users/:id", (req, res) => {
-        const id = req.params.id;
-        db.User.findOne({ _id : id })
-            .then(data => res.json(data))
+        
+
+
+
+        // const id = req.params.id;
+        // db.User.findOne({ _id : id })
+        //     .then(data => res.json(data))
     })
 
+    //SAVE GAME TO USER PROFILE
     app.put("/api/users/:id", (req, res) => {
         const id = req.params.id;
-        db.User.update(
-            // { onboard: true },
-            { _id : id })
+        const game = {
+            title: req.params.title,
+            platform: req.params.platform,
+            store: req.params.store,
+            image: req.params.image,
+          }
+        db.User.updateOne(
+            { "_id" : id },
+            {$push: game
+            })
             .then(updated => res.json(updated))
     })
 
-    // GET /auth/google
-    //   Use passport.authenticate() as route middleware to authenticate the
-    //   request.  The first step in Google authentication will involve redirecting
-    //   the user to google.com.  After authorization, Google will redirect the user
-    //   back to this application at /auth/google/callback
-    // app.get('/auth/google',
-    //     passport.authenticate('google', {
-    //         scope: ['https://www.googleapis.com/auth/userinfo.email',
-    //             'https://www.googleapis.com/auth/userinfo.profile'],
-    //         display: 'popup'
-    //     }))
-
-    // GET /auth/google/callback
-    //   Use passport.authenticate() as route middleware to authenticate the
-    //   request.  If authentication fails, the user will be redirected back to the
-    //   login page.  Otherwise, the primary route function function will be called,
-    //   which, in this example, will redirect the user to the home page.
-    // app.get('/auth/google/callback',
-    //     passport.authenticate('google', { failureRedirect: '/auth/failure' }),
-    //     function (req, res) {
-    //         res.redirect(URL)
-    //     })
 
     app.get('/auth/failure', function (req, res) {
         res.send(401)
     })
 
-    // Route for logging user out
+//     // Route for logging user out
     app.get("/logout", function (req, res) {
         req.logout();
         res.redirect(URL);

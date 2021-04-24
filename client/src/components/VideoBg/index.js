@@ -11,7 +11,7 @@ export default function VideoBg() {
           position: "absolute",
           width: "100%",
           left: "50%",
-          top: "41.5%",
+          // top: "41.5%",
           top: "55.5%",
           height: "100%",
           objectFit: "cover",
