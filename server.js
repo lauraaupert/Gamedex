@@ -8,12 +8,8 @@ const app = express();
 //PASSPORT REQUIRES
 const passport = require("./config/passport");
 
-const passportLocal = require("passport-local").Strategy
 const session = require("express-session")
 const bcrypt = require("bcryptjs")
-const cors = require("cors")
-const cookieParser = require("cookie-parser")
-const User = require("./models/user")
 
 const db = require("./models");
 
@@ -22,15 +18,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //PASSPORT MIDDLEWARE
-app.use(cors({
-  origin: "http://localhost:3000",
-  credentials: true
-}))
 
 app.use(session({
   secret: "secretelephant",
   resave: true,
-  saveUnitialized: true
+  // saveUnitialized: true
 }))
 app.use(passport.initialize());
 app.use(passport.session());
@@ -45,9 +37,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.use(routes);
+// app.use(routes);
 require("./routes/api/user.js")(app);
-require("./routes/api/games")(app, db);
+// require("./routes/api/games")(app, db);
 
 //PASSPORT TEST ROUTES
 // app.post("/login", (req,res) => {
@@ -128,25 +120,59 @@ mongoose.connect(
   () => console.log("DB connected!")
 );
 
+
 const userSeed = [
   {
-    username: "The Dead Zone",
+    email: "The Dead Zone",
 
-    password: "Stephen King"
+    password: "Stephen King",
+    name: "Alpha"
+
+
   },
   {
-    username: "Arthur the Frog",
+    email: "Arthur the Frog",
 
-    password: "tadpole"
+    password: "tadpole",
+    name: "beta",
+    games: [
+      {
+      title: "Among us",
+      platform: "Dead",
+      store: "glubby",
+      image: "https://media.rawg.io/media/games/e74/e74458058b35e01c1ae3feeb39a3f724.jpg"
+      },
+      {
+        title: "yo",
+        platform: "greeb",
+        store: "gkghl",
+        image: "https://media.rawg.io/media/games/e74/e74458058b35e01c1ae3feeb39a3f724.jpg",
+      }
+    
+    ]
   }
 
 ]
+// db.Game
+//   .find({})
+//   .then(() => db.Game.create(game))
+//   .then(data => {
+
+//     console.log(" records inserted!");
+
+//     process.exit(0);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
+
 db.User
   .find({})
   .then(() => db.User.create(userSeed))
   .then(data => {
 
-    // console.log(data.result.n + " records inserted!");
+    console.log(" records inserted!");
 
     process.exit(0);
   })
