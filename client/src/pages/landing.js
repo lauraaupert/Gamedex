@@ -4,10 +4,10 @@ import API from "../utils/API";
 // import GameTable from "../components/Table";
 
 function Landing(props) {
-  // const userInput = "";
-  // API.searchTerms(userInput).then(function (result) {
-  //   console.log(result);
-  // // });
+  const about = "about";
+  API.searchTerms(about).then(function (result) {
+    console.log(result);
+  });
   return (
     // <h1>Matt's sexy landing page</h1>
     <SearchBar />

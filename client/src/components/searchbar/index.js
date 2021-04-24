@@ -7,7 +7,8 @@ import Navbar from "../NavBar/index";
 import API from "../../utils/API";
 // import Result from "../../pages/landing";
 // import Find from "../../pages/landing";
-import GameTable from "../Table";
+// import GameTable from "../Table/index";
+// import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,15 +67,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SearchBar() {
+  const userInput = "searchTerm";
+  API.searchTerms(userInput).then(function (result) {
+    console.log(result);
+  });
+
   const [games, setGames] = useState({
     gameList: [],
   });
+
   const [saveGames, setSaveGames] = useState({
     saveGames: [],
   });
+
   const [typing, setTyping] = useState({
     searchTerm: "",
   });
+
   const handleSave = function handleSave(gameData) {
     API.saveGame(gameData);
     setSaveGames({
@@ -112,7 +121,6 @@ export default function SearchBar() {
   ];
   const gameInput = [
     // { id: 1, image: "Snow", name: "Jon", platform: 35 }
-    handleSubmit = 
   ];
 
   return (
@@ -145,6 +153,7 @@ export default function SearchBar() {
           </Toolbar>
         </AppBar>
       )}
+
       <br></br>
 
       <div className="form-group" textAlign>
@@ -162,40 +171,26 @@ export default function SearchBar() {
               }}
               inputProps={{ "aria-label": "search" }}
             />
-            <button type="submit" id="Searchy" className="btn btn-primary mt-3">
+
+            <button
+              type="submit"
+              id="Searchy"
+              className="btn btn-primary mt-3"
+              onSubmit={handleSubmit}
+            >
               Search
             </button>
           </div>
         </div>
       </div>
       <br></br>
-
-      {gameInput.length ? (
-        <GameTable rows={gameInput} />
+      {/* {gameInput.length ? (
+        // <GameTable rows={gameInput} />
       ) : (
         <h1> What game you want? </h1>
-      )}
-
-      {/* <Find handleSubmit={handleSubmit} handleTyping={handleTyping} />
-
-      {games.gameList.length > 0 ? (
-        <Result game={games.gameList} handleSave={handleSave} />
-      ) : (
-        ""
       )} */}
     </div>
   );
 }
 
-//   return (
-//     <div>
-//       <Find handleSubmit={handleSubmit} handleTyping={handleTyping} />
-
-//       {games.gameList.length > 0 ? (
-//         <Result game={games.gameList} handleSave={handleSave} />
-//       ) : (
-//         ""
-//       )}
-//     </div>
-//   );
-// }
+//
