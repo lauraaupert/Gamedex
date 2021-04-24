@@ -1,11 +1,12 @@
-import React, { Fragment } from "react";
+import React, { useState } from "react";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import { Button, AppBar, Toolbar } from "@material-ui/core";
 import Navbar from "../NavBar/index";
 import API from "../../utils/API";
-import axios from "axios";
+// import Result from "../../pages/landing";
+// import Find from "../../pages/landing";
 import GameTable from "../Table";
 
 const useStyles = makeStyles((theme) => ({
@@ -65,6 +66,38 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SearchBar() {
+  const [games, setGames] = useState({
+    gameList: [],
+  });
+  const [saveGames, setSaveGames] = useState({
+    saveGames: [],
+  });
+  const [typing, setTyping] = useState({
+    searchTerm: "",
+  });
+  const handleSave = function handleSave(gameData) {
+    API.saveGame(gameData);
+    setSaveGames({
+      ...saveGames,
+      savedGames: gameData,
+    });
+  };
+  const handleTyping = function handleTyping(event) {
+    event.preventDefault();
+    setTyping({
+      ...typing,
+      searchTerm: event.target.value,
+    });
+  };
+  const handleSubmit = function handleSubmit() {
+    API.googleSearch(typing.searchTerm).then(function (results) {
+      setGames({
+        ...games,
+        gameList: results.data.items,
+      });
+    });
+  };
+
   const classes = useStyles();
   const btnStyle = { backgroundColor: "#00801c", margin: "8px 0" };
   const NavStlye = {
@@ -77,7 +110,10 @@ export default function SearchBar() {
     // { id: 1, cost: "Snow", Name: "Jon", platform: 35 },
     // { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
   ];
-  const gameInput = [{ id: 1, image: "Snow", name: "Jon", platform: 35 }];
+  const gameInput = [
+    // { id: 1, image: "Snow", name: "Jon", platform: 35 }
+    handleSubmit = 
+  ];
 
   return (
     <div>
@@ -111,7 +147,7 @@ export default function SearchBar() {
       )}
       <br></br>
 
-      <div className="form-group">
+      <div className="form-group" textAlign>
         <div className={classes.root}>
           <div className={classes.search}>
             <h1>Search for a game</h1>
@@ -126,11 +162,7 @@ export default function SearchBar() {
               }}
               inputProps={{ "aria-label": "search" }}
             />
-            <button
-              onClick={API.getGame}
-              id="Searchy"
-              className="btn btn-primary mt-3"
-            >
+            <button type="submit" id="Searchy" className="btn btn-primary mt-3">
               Search
             </button>
           </div>
@@ -143,6 +175,27 @@ export default function SearchBar() {
       ) : (
         <h1> What game you want? </h1>
       )}
+
+      {/* <Find handleSubmit={handleSubmit} handleTyping={handleTyping} />
+
+      {games.gameList.length > 0 ? (
+        <Result game={games.gameList} handleSave={handleSave} />
+      ) : (
+        ""
+      )} */}
     </div>
   );
 }
+
+//   return (
+//     <div>
+//       <Find handleSubmit={handleSubmit} handleTyping={handleTyping} />
+
+//       {games.gameList.length > 0 ? (
+//         <Result game={games.gameList} handleSave={handleSave} />
+//       ) : (
+//         ""
+//       )}
+//     </div>
+//   );
+// }
