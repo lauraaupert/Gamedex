@@ -35,7 +35,7 @@ function Wishlist() {
       <Box display="flex" justifyContent="center" textAlign="center">
         <Card className={classes.root}>
           <Box>
-            <CardHeader title="WistList" subheader="Choose Your Game" />
+            <CardHeader title="WishList" subheader="Choose Your Game" />
           </Box>
         </Card>
       </Box>

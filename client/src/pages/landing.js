@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "../components/searchbar";
+import API from "../utils/API";
 // import GameTable from "../components/Table";
 import API from "../utils/API"
 

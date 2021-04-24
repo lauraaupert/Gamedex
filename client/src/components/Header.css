@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Merriweather:wght@300&display=swap');
+.login {
+  background-image: linear-gradient(to right bottom,  #11e068, black);
+  padding:10%;
+}
+.loginPage__image{
+  background-attachment: fixed;
+  background-image: url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/72850/adccb72665ebf9c79a850a6a38d849e888366e29.jpg");
+  padding:10%;
+  border-radius: 20px;
+  padding: 25px 15px;
+  box-shadow: 0 0 10px black;
+}
+.image{
+  background-image: linear-gradient(to right bottom,  #11e068, black);
+  
+}
+.title__app {
+  font-family: Kaushan Script;
+  text-decoration:none;
+  margin: 20px 0;
+  font-size: 3.7rem;
+  text-align: center;
+}
+
+
+  /* object-fit: contain;
+  border-radius: 30px; */
+

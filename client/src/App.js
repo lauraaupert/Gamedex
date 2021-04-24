@@ -16,30 +16,32 @@ import VideoBg from "./components/VideoBg/index"
 function App() {
   
   return (
-  <Router>
     
-      
+    <Router>
+
+
       <div className="App">
+      <VideoBg />
+        <Switch>
 
-      <Switch>
+          <Route exact path="/">
+            <Landing />
 
-        <Route exact path="/">
-        <VideoBg/>
-    <Landing />
-      </Route>
-      <Route exact path="/login">
-    <LoginPage />
-      
-      </Route>
-     
-      <Route  exact path="/Wishlist">
-      <WishlistPage />
-      </Route>
-      <Route>
+
+          </Route>
+          <Route exact path="/login">
+            <LoginPage />
+
+          </Route>
+
+          <Route exact path="/Wishlist">
+            <WishlistPage />
+          </Route>
+          <Route>
             <NoMatch />
           </Route>
-      
-      </Switch>
+
+        </Switch>
 
       </div>
 

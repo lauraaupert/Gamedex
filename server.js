@@ -72,6 +72,36 @@ require("./routes/api/games")(app, db);
 
  
 
+//PASSPORT TEST ROUTES
+// app.post("/login", (req,res) => {
+//   console.log(req.body)
+// })
+// app.post("/register", (req,res) => {
+//   console.log(req.body)
+
+//       const newUser = new User({
+//         username: req.body.username,
+//         password: req.body.password
+//       });
+//       db.User
+//   .find({})
+//   .then(() => db.User.create(newUser))
+//   .then(data => {
+
+//     // console.log(data.result.n + " records inserted!");
+
+//     process.exit(0);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
+// })
+
+    
+
+ 
+
 // Send every other request to the React app
 
 // Define any API routes before this runs
