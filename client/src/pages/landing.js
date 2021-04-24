@@ -1,8 +1,14 @@
 import React from "react";
 import SearchBar from "../components/searchbar";
 // import GameTable from "../components/Table";
+import API from "../utils/API"
 
 function Landing() {
+const about = "about us"
+  API.searchTerms(about)
+  .then(function(result){
+    console.log(result)
+  })
   return (
     // <h1>Matt's sexy landing page</h1>
     <SearchBar />
