@@ -10,28 +10,29 @@ import axios from "axios";
 const Signup=() => {
 const [name, setName] = useState("");
 const [password, setPassword] = useState("");
-const [confirmPassword, setConfirmPassword] = useState("");
-const paperStyle={padding:20 ,width:300, margin:"0 auto",backgroundColor:"gray"}
+
+const paperStyle={padding:20 ,width:300,height:"62vh",margin:"0 auto",borderRadius:"20px"}
 const headerStyle={margin:0}
 const avatarStyle={backgroundColor:"black"}
-const btnStyle={backgroundColor:"black", color:"white"}
+const btnStyle={backgroundColor:"black", color:"white", margin: "8px 0"}
 const marginTop={marginTop:10}
 async function signup(e) {
   e.preventDefault();
   try {
    const signupData = {
+     name,
      password,
-     confirmPassword,
    };
-   await axios.post("http://localhost:3000/signup", signupData);
-  }catch(err){
+   await axios.post("http://localhost:3000/signup", signupData).then((res) => console.log(res))
+  }
+  catch(err){
     console.error(err);
   }
 }
 
   return (
     <Grid>
-      <Paper style={paperStyle}>
+      <Paper className="image" style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
             <PersonAddOutlinedIcon />
@@ -47,7 +48,7 @@ async function signup(e) {
           <FormControl component="fieldset" style={marginTop}>
           </FormControl>
           <TextField fullWidth label="Password" placeholder="Create Your Password" onChange={(e) => setPassword(e.target.value)} value={password}/>
-          <TextField fullWidth label="Confirm Password" placeholder="Confirm Your Password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}/>
+          <TextField fullWidth label="Confirm Password" placeholder="Confirm Your Password" />
           <FormControlLabel
             control={
               <Checkbox
@@ -57,7 +58,7 @@ async function signup(e) {
             }
             label="I accept terms and conditions"
           />
-          <Button type="submit" style={btnStyle} varient="contained" >
+          <Button href="/Login" type="submit" style={btnStyle} varient="contained" >
             Sign up
           </Button>
         </form>
