@@ -4,9 +4,10 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import { Button, AppBar, Toolbar } from "@material-ui/core";
 import Navbar from "../NavBar/index";
 import API from "../../utils/API";
-import axios from "axios";
-import GameTable from "../Table";
+// import GameTable from "../Table";
 import "../../components/searchbar.css";
+import Find from "../find";
+import Result from "../results";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,21 +75,21 @@ export default function SearchBar() {
   const handleSave = function handleSave(gameData) {
     API.saveGame(gameData);
     setSaveGames({
-      ...saveGames,
+      saveGames,
       savedGames: gameData,
     });
   };
   const handleTyping = function handleTyping(event) {
     event.preventDefault();
     setTyping({
-      ...typing,
+      typing,
       searchTerm: event.target.value,
     });
   };
   const handleSubmit = function handleSubmit() {
     API.googleSearch(typing.searchTerm).then(function (results) {
       setGames({
-        ...games,
+        games,
         gameList: results.data.items,
       });
     });
@@ -107,7 +108,8 @@ export default function SearchBar() {
     // { id: 2, cost: "Rain", Name: "Jess", platform: 50 },
   ];
   const gameInput = [
-    // { id: 1, image: "Snow", name: "Jon", platform: 35 }
+    { id: 1, image: "Snow", name: "Jon", platform: 35 },
+    { id: 1, image: "Snow", name: "Jon", platform: 35 },
   ];
 
   return (
@@ -139,7 +141,6 @@ export default function SearchBar() {
           </Toolbar>
         </AppBar>
       )}
-
       <div className="form-group" textAlign>
         <div className={classes.root}>
           <div className={classes.search}>
@@ -160,7 +161,6 @@ export default function SearchBar() {
               }}
               inputProps={{ "aria-label": "search" }}
             />
-
             <button
               type="submit"
               id="Searchy"
@@ -173,11 +173,20 @@ export default function SearchBar() {
         </div>
       </div>
       <br></br>
-      {/* {gameInput.length ? (
-        // <GameTable rows={gameInput} />
+      <Find handleSubmit={handleSubmit} handleTyping={handleTyping} />
+      {gameInput.length ? (
+        <Result
+          book={games.gameList}
+          handleSave={handleSave}
+          // GameTable
+          // rows={gameInput}
+        />
       ) : (
         <h1> What game you want? </h1>
-      )} */}
+      )}
+      {/* gameInput.length ? (
+      <Result GameTable rows={gameInput} handleSave={handleSave} />) : (
+      <h1> What game you want? </h1>) */}
     </div>
   );
 }

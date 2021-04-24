@@ -4,7 +4,6 @@ import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import { Box } from "@material-ui/core";
 import GameTable from "../Table";
-// import useStyles from "./stylesW.css";
 
 const useStyles = makeStyles(() => ({
   root: {
