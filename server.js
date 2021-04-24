@@ -38,9 +38,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.use(routes);
+// app.use(routes);
 require("./routes/api/user.js")(app);
-require("./routes/api/games")(app, db);
+// require("./routes/api/games")(app, db);
 
 //PASSPORT TEST ROUTES
 // app.post("/login", (req,res) => {
