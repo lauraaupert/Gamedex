@@ -12,22 +12,14 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import axios from "axios";
-// import Passport from "../utils/passport"
-
-
-const Login = ({handleChange}) => {
-  const [name, setUserName] = useState("");
-
+import "../../components/Header.css";
+ 
+const Login = ({handleChange,}) => {
+  const [name, setname] = useState("");
   const [password, setPassword] = useState("");
-  const paperStyle = {
-    padding: 20,
-    height: "61.5vh",
-    width: 300,
-    margin: "0 auto",
-    backgroundColor: "gray",
-  };
-  const avatarStyle = { backgroundColor: "black" };
-  const btnStyle = { backgroundColor: "black", margin: "8px 0" };
+  const paperStyle={padding :20,height:"62vh",width:300, margin:"0 auto", borderRadius:"20px"}
+  const avatarStyle={backgroundColor:"black"}
+  const btnStyle={backgroundColor:"black"}
   async function login(e) {
     e.preventDefault();
     try {
@@ -35,7 +27,7 @@ const Login = ({handleChange}) => {
        name,
        password,
      };
-     await axios.post("http://localhost:3000/login", loginData);
+     await axios.post("http://localhost:3000/login", loginData).then((res) => console.log(res))
     }catch(err){
       console.error(err);
     }
@@ -43,7 +35,7 @@ const Login = ({handleChange}) => {
 
   return (
     <Grid>
-      <Paper elevation={10} style={paperStyle}>
+      <Paper className="image" elevation={10} style={paperStyle}>
         <Grid align="center">
           <Avatar style={avatarStyle}>
             <LockOutlinedIcon />
@@ -52,8 +44,8 @@ const Login = ({handleChange}) => {
         </Grid>
 
         <form onSubmit={login}>
-
-          <TextField label="Username" name="username" placeholder="Enter username" fullWidth required onChange={(e) => setUserName(e.target.value)} value={name}/>
+          <TextField
+          label="Username" name="username" placeholder="Enter username" fullWidth required onChange={(e) => setname(e.target.value)} value={name}/>
           <TextField label="Password" name="password" placeholder="Enter Password" type="password" fullWidth required onChange={(e) => setPassword(e.target.value)} value={password}/>
           <FormControlLabel
             name="remember"
@@ -62,7 +54,7 @@ const Login = ({handleChange}) => {
           />
 
           <Button
-            href="/wishlist"
+            href="/"
             type="submit"
             style={btnStyle}
             variant="contained"

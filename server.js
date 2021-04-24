@@ -22,10 +22,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //PASSPORT MIDDLEWARE
-// app.use(cors({
-//   origin: "http://localhost:3000",
-//   credentials: true
-// }))
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true
+}))
 
 app.use(session({
   secret: "secretelephant",
@@ -48,6 +48,36 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 require("./routes/api/user.js")(app);
 require("./routes/api/games")(app, db);
+
+//PASSPORT TEST ROUTES
+// app.post("/login", (req,res) => {
+//   console.log(req.body)
+// })
+// app.post("/register", (req,res) => {
+//   console.log(req.body)
+
+//       const newUser = new User({
+//         username: req.body.username,
+//         password: req.body.password
+//       });
+//       db.User
+//   .find({})
+//   .then(() => db.User.create(newUser))
+//   .then(data => {
+
+//     // console.log(data.result.n + " records inserted!");
+
+//     process.exit(0);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
+// })
+
+    
+
+ 
 
 //PASSPORT TEST ROUTES
 // app.post("/login", (req,res) => {
