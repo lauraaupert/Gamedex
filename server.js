@@ -10,7 +10,6 @@ const passport = require("./config/passport");
 
 const session = require("express-session")
 const bcrypt = require("bcryptjs")
-const cookieParser = require("cookie-parser")
 
 const db = require("./models");
 
@@ -23,7 +22,7 @@ app.use(express.json());
 app.use(session({
   secret: "secretelephant",
   resave: true,
-  saveUnitialized: true
+  // saveUnitialized: true
 }))
 app.use(passport.initialize());
 app.use(passport.session());
