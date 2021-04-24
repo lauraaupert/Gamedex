@@ -54,7 +54,7 @@ const Login = ({handleChange,}) => {
           />
 
           <Button
-            href="/wishlist"
+            href="/"
             type="submit"
             style={btnStyle}
             variant="contained"
