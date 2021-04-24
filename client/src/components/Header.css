@@ -17,10 +17,10 @@
 }
 .title__app {
   font-family: Kaushan Script;
+  text-decoration:none;
   margin: 20px 0;
   font-size: 3.7rem;
   text-align: center;
-  
 }
 
 
