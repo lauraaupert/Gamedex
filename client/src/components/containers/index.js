@@ -1,9 +1,9 @@
-import React,{ useState } from "react";
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import React, { useState } from "react";
+import Paper from "@material-ui/core/Paper";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 import Login from "../Login";
 import Signup from "../Signup";
 
@@ -50,14 +50,13 @@ function TabPanel(props) {
         <Tab style={tabStyle} label="Sign up" />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Login handleChange={handleChange}/>
+        <Login handleChange={handleChange} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Signup />
-       </TabPanel>
+      </TabPanel>
     </Paper>
-  )
-
-}
+  );
+};
 
 export default SignInOutContainer;

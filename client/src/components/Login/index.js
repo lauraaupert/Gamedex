@@ -1,8 +1,16 @@
-import { Grid, Paper, Avatar, TextField, Button, Typography, Link  } from "@material-ui/core";
+import {
+  Grid,
+  Paper,
+  Avatar,
+  TextField,
+  Button,
+  Typography,
+  Link,
+} from "@material-ui/core";
 import React, { useState } from "react";
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 import axios from "axios";
 import "../../components/Header.css";
  
@@ -23,14 +31,15 @@ const Login = ({handleChange,}) => {
     }catch(err){
       console.error(err);
     }
-    
   }
-  
-  return(
+
+  return (
     <Grid>
       <Paper className="image" elevation={10} style={paperStyle}>
         <Grid align="center">
-          <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>
+          <Avatar style={avatarStyle}>
+            <LockOutlinedIcon />
+          </Avatar>
           <h2>Login</h2>
         </Grid>
 
@@ -40,38 +49,35 @@ const Login = ({handleChange,}) => {
           <TextField label="Password" name="password" placeholder="Enter Password" type="password" fullWidth required onChange={(e) => setPassword(e.target.value)} value={password}/>
           <FormControlLabel
             name="remember"
-            control={
-              <Checkbox
-                name="checkboxB"
-                color="#00801c"
-              />
-            }
+            control={<Checkbox name="checkboxB" color="#00801c" />}
             label="Remember me"
           />
-          
 
-          <Button href="/" type="submit" style={btnStyle} variant="contained" color="secondary" fullWidth >
-
+          <Button
+            href="/wishlist"
+            type="submit"
+            style={btnStyle}
+            variant="contained"
+            color="secondary"
+            fullWidth
+          >
             Login
-        </Button>
-        
-      
+          </Button>
         </form>
 
-
-        <Typography >
-          <Link href="#" >
-            Forgot password?
-        </Link>
+        <Typography>
+          <Link href="#">Forgot password?</Link>
         </Typography>
-        <Typography > Do you have an account?
-        <Link href="#" onClick={() => handleChange("event", 1)} >
+        <Typography>
+          {" "}
+          Do you have an account?
+          <Link href="#" onClick={() => handleChange("event", 1)}>
             <br /> Sign up!
-        </Link>
+          </Link>
         </Typography>
       </Paper>
     </Grid>
-  )
-}
+  );
+};
 
 export default Login;
