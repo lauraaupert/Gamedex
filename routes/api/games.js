@@ -1,4 +1,4 @@
-const router = require("express").Router();
+// const router = require("express").Router();
 const gamesController = require("../../controllers/gamesController");
 
 // // Matches with "/api/games"
@@ -17,7 +17,7 @@ const gamesController = require("../../controllers/gamesController");
 
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
 const User = require("../../models/user")
-const Game = require("../../models/game")
+// const Game = require("../../models/game")
 
 module.exports = (server, db) => {
 //   /*      * Here are the basic api routes for games *
