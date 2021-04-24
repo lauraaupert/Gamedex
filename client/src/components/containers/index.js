@@ -7,13 +7,14 @@ import Box from '@material-ui/core/Box';
 import Login from "../Login";
 import Signup from "../Signup";
 
+
 const SignInOutContainer = () => {
 const [value,setValue]=useState(0)
 const handleChange = (event, newValue) => {
   setValue(newValue);
 };
 const tabStyle = {color:"white"}
-const paperStyle={width:340,margin:"20px auto",borderRadius:"20px",backgroundColor:"black"}
+const paperStyle={width:340,margin:"0 auto",borderRadius:"20px",backgroundColor:"black",}
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 

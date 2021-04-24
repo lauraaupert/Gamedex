@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "../components/searchbar/searchbar";
 
+
 function Landing() {
   return (
     // <h1>Matt's sexy landing page</h1>

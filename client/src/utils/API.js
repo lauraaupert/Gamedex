@@ -26,6 +26,7 @@ export default {
     saveGame: function(gameData) {
       return axios.post("/api/games", gameData);
     },
+
     // Saves a user to the database
     // getUsers: function() {
     //   return axios.get("/api/users");
@@ -33,6 +34,7 @@ export default {
     getUser: function(id) {
       return axios.get("/api/users/" + id);
     },
+
 
 
   
