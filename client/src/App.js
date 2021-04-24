@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <VideoBg /> */}
+        <VideoBg />
         <Switch>
           <Route exact path="/">
             <Landing />

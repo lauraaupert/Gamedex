@@ -14,7 +14,7 @@ const columns = [
 
 export default function GameTable(props) {
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div style={{ height: 400, width: "100%", backgroundColor:"white", opacity:"50%"}}>
       <DataGrid
         rows={props.rows}
         columns={columns}
