@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const gameRoutes = require("./games");
-const userRoutes = require("./user");
+const authRoutes = require("./auth");
 
 // Book routes
-router.use("/api/games", gameRoutes);
-router.use("/api/users", userRoutes)
+// router.use("/games", gameRoutes);
+router.use(authRoutes)
 
 module.exports = router;

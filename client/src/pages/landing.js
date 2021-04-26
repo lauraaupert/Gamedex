@@ -2,7 +2,6 @@ import React from "react";
 import SearchBar from "../components/searchbar";
 import API from "../utils/API";
 // import GameTable from "../components/Table";
-
 function Landing() {
   const about = "about us";
   API.searchTerms(about).then(function (result) {
@@ -10,7 +9,9 @@ function Landing() {
   });
   return (
     // <h1>Matt's sexy landing page</h1>
+     
     <SearchBar />
+    
   );
 }
 

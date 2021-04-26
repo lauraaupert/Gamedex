@@ -8,13 +8,13 @@ import Login from "../Login";
 import Signup from "../Signup";
 
 
-const SignInOutContainer = () => {
+const SignInOutContainer = ({setIsAuthenticatedUser}) => {
 const [value,setValue]=useState(0)
 const handleChange = (event, newValue) => {
   setValue(newValue);
 };
 const tabStyle = {color:"white"}
-const paperStyle={width:340,margin:"0 auto",borderRadius:"20px",backgroundColor:"black",}
+const paperStyle={width:340,margin:"0 auto",borderRadius:"20px",backgroundColor:"black"}
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -50,10 +50,10 @@ function TabPanel(props) {
         <Tab style={tabStyle} label="Sign up" />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Login handleChange={handleChange} />
+        <Login handleChange={handleChange} setIsAuthenticatedUser={setIsAuthenticatedUser} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Signup />
+        <Signup setIsAuthenticatedUser={setIsAuthenticatedUser} />
       </TabPanel>
     </Paper>
   );

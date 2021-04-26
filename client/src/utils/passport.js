@@ -1,15 +1,12 @@
 import axios from 'axios';
 
 export default {
-    isLoggedIn: () => {
-        return axios.get('/auth/success')
-    },
-    signUp: (email, password, name) => {
-        console.log(email, password, name)
+    signUp: (email, password, username) => {
+        console.log(email, password, username)
         return axios.post('/api/signup', {
             email: email,
             password: password,
-            name: name
+            username: username
         })
     },
     // onboarded: (id) => {
@@ -18,11 +15,14 @@ export default {
     // onboardStatus: (id) => {
     //     return axios.get('/api/users/' + id)
     // },
-    LogIn: (email, password) => {
+    LogIn: (username, password) => {
         return axios.post('/api/login', {
-            email: email,
+            username: username,
             password: password
         })
     },
-    Logout: () => axios.get('/logout')
+    isAuthenticated: () => {
+        return axios.get('/api/user_data')
+    },
+    Logout: () => axios.get('/api/logout')
 }

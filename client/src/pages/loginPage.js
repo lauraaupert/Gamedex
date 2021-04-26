@@ -3,8 +3,7 @@ import React from "react";
 import SignInOutContainer from "../components/containers/index";
  import "../components/Header.css";
 
-
-function LoginPage() {
+function LoginPage({setIsAuthenticatedUser}) {
 
     return (
         <div className="login">
@@ -13,7 +12,7 @@ function LoginPage() {
             
             </div>
             <div className="loginPage__image">
-            <SignInOutContainer />
+            <SignInOutContainer setIsAuthenticatedUser={setIsAuthenticatedUser} />
            </div>
           </div>
         

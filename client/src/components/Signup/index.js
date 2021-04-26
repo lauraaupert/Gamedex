@@ -1,34 +1,31 @@
 import { Avatar, Button, Grid, Paper, TextField, Typography } from "@material-ui/core";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Checkbox from '@material-ui/core/Checkbox';
-import axios from "axios";
+import passport from "../../utils/passport";
 
 
-const Signup=() => {
-const [name, setName] = useState("");
-const [password, setPassword] = useState("");
+const Signup = ({ setIsAuthenticatedUser}) => {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("")
+  const paperStyle = { padding: 20, width: 300, height: "62vh", margin: "0 auto", borderRadius: "20px" }
+  const headerStyle = { margin: 0 }
+  const avatarStyle = { backgroundColor: "black" }
+  const btnStyle = { backgroundColor: "black", color: "white", margin: "8px 0" }
+  const marginTop = { marginTop: 10 }
+  async function signup(e) {
+    e.preventDefault();
 
-const paperStyle={padding:20 ,width:300,height:"62vh",margin:"0 auto",borderRadius:"20px"}
-const headerStyle={margin:0}
-const avatarStyle={backgroundColor:"black"}
-const btnStyle={backgroundColor:"black", color:"white", margin: "8px 0"}
-const marginTop={marginTop:10}
-async function signup(e) {
-  e.preventDefault();
-  try {
-   const signupData = {
-     name,
-     password,
-   };
-   await axios.post("http://localhost:3000/signup", signupData).then((res) => console.log(res))
+    passport.signUp(email, password, username).then(response =>{
+      if (response.status === 200) {
+        setIsAuthenticatedUser(true)
+      }
+    })
+
   }
-  catch(err){
-    console.error(err);
-  }
-}
 
   return (
     <Grid>
@@ -43,11 +40,15 @@ async function signup(e) {
         </Typography>
         </Grid>
         <form onSubmit={signup}>
-          <TextField fullWidth label="Name" placeholder="Enter your name" onChange={(e) => setName(e.target.value)} value={name}/>
+          <TextField
+            onChange={e => setUsername(e.target.value)} value={username} fullWidth label="username" placeholder="Enter your username" />
+          <TextField
+            onChange={e => setEmail(e.target.value)} value={email} fullWidth label="email" placeholder="Enter your email" />
 
           <FormControl component="fieldset" style={marginTop}>
           </FormControl>
-          <TextField fullWidth label="Password" placeholder="Create Your Password" onChange={(e) => setPassword(e.target.value)} value={password}/>
+          <TextField
+            onChange={e => setPassword(e.target.value)} value={password} fullWidth label="Password" placeholder="Create Your Password" />
           <TextField fullWidth label="Confirm Password" placeholder="Confirm Your Password" />
           <FormControlLabel
             control={
@@ -58,7 +59,7 @@ async function signup(e) {
             }
             label="I accept terms and conditions"
           />
-          <Button href="/Login" type="submit" style={btnStyle} varient="contained" >
+          <Button onClick={signup} type="submit" style={btnStyle} varient="contained" >
             Sign up
           </Button>
         </form>
